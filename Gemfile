@@ -49,3 +49,12 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# shoulda matchers
+group :test do
+  gem 'shoulda-matchers'
+end
+
+# yelpster gem
+
+gem 'yelpster'
