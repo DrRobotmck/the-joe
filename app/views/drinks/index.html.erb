@@ -1,0 +1,32 @@
+<div class="container col-md-12">
+	<div class="header col-md-12">
+	<%= button_tag link_to('Shops', root_path), class: 'headbutts'%>
+	<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+	<% unless logged_in? %>
+	<%= button_tag link_to('Log In', new_session_path), class: 'headbutts'%>
+	<% else %>
+	<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+	<% end %>
+	</div>
+
+
+<div class="row">
+	<div id="navbar" class="navbar glossary col-md-10">
+		<ul class="nav nav-tabs">
+			<% for drink in @drinks do %>
+				<li class"col-md-1"><a class="navbutt"href="#<%= drink.id%>"><%= drink.name%></a>
+				</li>
+			<%end%>
+			
+		</ul>
+</div></div>
+<div data-spy="scroll" data-target="#navbar" class = "scrolly col-md-8">
+		<%for drink in @drinks do%>
+		<h4 id="<%=drink.id%>"></h4>
+		<p class="drink">
+		<%= drink.definition%>
+		</p>
+		<%end%>
+
+	</div>
+</div>

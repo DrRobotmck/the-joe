@@ -1,5 +1,8 @@
 TheJoe::Application.routes.draw do
   root 'main#index'
+  resource :session
+  resources :drinks, only: [:index,:show]
+  resources :main, only: [:index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
- *= require skeleton
  *= require main
+ *= require bootstrap.css
+ *= require bootstrap-theme.css
  */

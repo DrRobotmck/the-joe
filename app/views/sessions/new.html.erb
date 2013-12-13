@@ -1,0 +1,16 @@
+<div class="back"></div>
+<%= link_to image_tag('joe2.svg', width:300, height:300, class: 'image'), root_path%>
+<div class="container">
+
+<div class= "session col-md-6">
+	<%= form_tag session_path, :method => :post do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password  %>
+
+  <%= submit_tag "Login"%>
+  <%end%>
+  </div>
+</div>

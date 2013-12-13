@@ -7,8 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="back"></div>
+<%= link_to image_tag('joe2.svg', width:300, height:300, class: 'image'), root_path%>
 
-<%= yield %>
+	<%= yield %>
 
 </body>
 </html>

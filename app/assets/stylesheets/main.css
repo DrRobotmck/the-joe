@@ -1,6 +1,13 @@
 html, body{
 	max-width:100%;
 }
+a{
+	text-decoration: none;
+	/*display: inline-block;*/
+}
+a:visited{
+	color:lavenderblush;
+}
 div.back{
 	z-index: -2;
 	background: url(http://farm6.staticflickr.com/5476/11328310724_a4e3f95754_o.png);
@@ -8,27 +15,19 @@ div.back{
 	height: 1500px;
 	position:absolute;
 }
-img.background{
-	/*height:1000px; */
-	/*max-width: 100%;*/
-	/*border:5px solid rgba(0,0,0,1);*/
+.image{
 	position: absolute;
-	z-index: -1;
-	/*-webkit-filter: ;*/
-	-webkit-filter:contrast(110%) blur(3%);
-	
 }
 
 .container{
-	/*margin-top: */
 	z-index: 2;
-	border:2px black solid;
-	position: relative;
 }
 .header{
+	top: 12em;
 	height: 15%;
 }
 .main{
+	top:12em;
 	background: rgba(0,0,0,.7);
 	margin:0 auto;
 	border-radius: 20px;
@@ -44,16 +43,20 @@ img.background{
 .shops{
 	text-align: center;
 }
-.search{
+.headbutts{
 	border:1px solid black;
 	background: rgba(34,31,31,.9);
 	color:lavenderblush;
+	display: inline;
 	margin-top: 1em;
 	margin-bottom: .5em;
-	width:4em;
+	width:5em;
 	height:2em;
 	font-size: 2em;
 	font-family:Helvetica;
+}
+.headbutts:hover{
+	color: indianred;
 }
 .drink-form{
 	margin-top: 20%;
@@ -76,4 +79,24 @@ label{
 	text-align: center;
 	height: 10%;
 	background: coral;
+	top:700px;
+}
+.scrolly{
+	border-radius: 5px;
+	background:rgba(240,248,205,.6);
+	top:11em;
+	left:16%;
+	height:19em;
+	overflow: scroll;
+	position:relative;
+}
+p.drink{
+	color:lavenderblush;
+}
+div.glossary{
+	top:11em;
+}
+#navbar{
+	background: rgba(100,149,237,.6);
+	left: 8.5em;
 }

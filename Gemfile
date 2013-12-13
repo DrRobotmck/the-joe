@@ -27,11 +27,20 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-# pry-rails,rspec
+# pry-rails,rspec,factory-girl, faker
 
-gem 'pry-rails'
-gem 'rspec-rails'
-
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'pry-rails'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+end
+# capybara
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'launchy'
+end
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -55,6 +64,7 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+#capybar 
 # yelpster gem
 
 gem 'yelpster'
