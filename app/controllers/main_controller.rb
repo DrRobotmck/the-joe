@@ -4,5 +4,8 @@ class MainController < ApplicationController
 		@drinks = Drink.all
 		@shops = Shop.all
 	end
+	def show
+
+	end
 
 end

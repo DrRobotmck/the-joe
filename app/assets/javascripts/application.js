@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 //= require bootstrap.js
+//= require scrollNav.js
+//= require underscore
 
-$(function(){
-	$('#navbar').scrollspy();
-});
+

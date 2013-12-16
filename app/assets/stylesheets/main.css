@@ -10,29 +10,73 @@ a:visited{
 }
 div.back{
 	z-index: -2;
-	background: url(http://farm6.staticflickr.com/5476/11328310724_a4e3f95754_o.png);
-	width: 1500px;
-	height: 1500px;
-	position:absolute;
+	width: 100%;
+	position:fixed;
+}
+div.back.home{
+	background: url(http://www.soapboxmedia.com/images/V4_Features/Issue_235/espresso-600.jpg);
+	height: 100%;
+	background-size: cover;
+}
+div.back.shops{
+	background: url(http://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg);
+	height: 100%;
+	background-size:cover;
+}
+div.back.drinks{
+	background: url(http://3.bp.blogspot.com/-9BZkcn1oW-4/Unwrf-X06lI/AAAAAAAAAYQ/bbryt4U7qPE/s1600/image.jpeg);
+	background-size: cover;
+	height:100%;
+}
+div.back.new{
+	background:url(http://www.photographybyre.com/wp-content/uploads/2011/06/CoffeeBar-Downtown-Los-Angeles1.jpg);
+	height:100%;
+	background-size: 111%;
 }
 .image{
+	z-index: 2;
+	left:6em;
 	position: absolute;
+	top:-2em;
+}
+.image:hover{
+	width:280px;
+	height:280px;
 }
 
 .container{
-	z-index: 2;
+	z-index: 1;
 }
 .header{
-	top: 12em;
+	position:fixed;
+	/*top: 10em;*/
 	height: 15%;
+	left:35%;
 }
-.main{
-	top:12em;
-	background: rgba(0,0,0,.7);
-	margin:0 auto;
+.mainpage{
+	top:10em;
+	/*left:12%;*/
+	position: fixed;
+	background: rgba(34,31,31,.4);
 	border-radius: 20px;
-	/*border: 1px black solid;*/
 	height:600px;
+}
+.mainpage-new-user{
+	top:10em;
+	/*left:20%;*/
+	position: fixed;
+	background: rgba(34,31,31,.4);
+	border-radius: 20px;
+	height:600px;
+}
+.mainpage-shops{
+	top:10em;
+	/*left:20%;*/
+	position: fixed;
+	background: rgba(34,31,31,.4);
+	border-radius: 20px;
+	height:600px;
+	overflow: scroll;
 }
 .shop-form{
 	margin-top: 20%;
@@ -44,19 +88,20 @@ div.back{
 	text-align: center;
 }
 .headbutts{
-	border:1px solid black;
-	background: rgba(34,31,31,.9);
+	border:none;
+	background: rgba(34,31,31,.4);
 	color:lavenderblush;
-	display: inline;
-	margin-top: 1em;
-	margin-bottom: .5em;
-	width:5em;
+	display:inline-block;
+	position:relative;
+	margin-right: 1px;
+	width:4em;
 	height:2em;
-	font-size: 2em;
+	font-size: 1em;
 	font-family:Helvetica;
 }
-.headbutts:hover{
+.headbutts a:hover{
 	color: indianred;
+	text-decoration: none;
 }
 .drink-form{
 	margin-top: 20%;
@@ -67,7 +112,7 @@ div.back{
 	text-align: center;
 }
 .searchbox{
-	height: 4em;
+	height: 3em;
 	font-family: Helvetica;
 	font-size: 1.5em;
 	text-align: center;
@@ -81,15 +126,7 @@ label{
 	background: coral;
 	top:700px;
 }
-.scrolly{
-	border-radius: 5px;
-	background:rgba(240,248,205,.6);
-	top:11em;
-	left:16%;
-	height:19em;
-	overflow: scroll;
-	position:relative;
-}
+
 p.drink{
 	color:lavenderblush;
 }
@@ -99,4 +136,11 @@ div.glossary{
 #navbar{
 	background: rgba(100,149,237,.6);
 	left: 8.5em;
+}
+
+div.new-user-form{
+	top: 5em;
+}
+form.new-user-form{
+	top: 5em;
 }

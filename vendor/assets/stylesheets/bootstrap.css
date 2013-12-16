@@ -5592,6 +5592,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel {
+  text-align: center;
   margin-bottom: 20px;
   background-color: #ffffff;
   border: 1px solid transparent;
@@ -5713,6 +5714,8 @@ a.list-group-item.active:focus .list-group-item-text {
 .panel > .table-responsive {
   margin-bottom: 0;
   border: 0;
+  width:30em;
+  height: 5em;
 }
 
 .panel-heading {
@@ -5772,6 +5775,7 @@ a.list-group-item.active:focus .list-group-item-text {
 }
 
 .panel-default {
+  width: 40em;
   border-color: #dddddd;
 }
 

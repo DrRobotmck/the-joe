@@ -1,0 +1,34 @@
+<div class="back shops"></div>
+<div class="container">
+	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
+	<div class="header col-md-9">	
+		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
+		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+		<% unless logged_in? %>
+		<%= button_tag link_to('Sign Up', new_user_path), class: 'headbutts'%>
+		<% else %>
+		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+		<% end %>
+
+	</div>
+	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
+	<div class= "info col-md-6 col-s-6 col-xs-12">
+	<% for shops in @shop do %>
+		<%= image_tag(shops.image, id: "image")%>
+		<h2 id="name"><%= shops.name %></h2>
+		<h4 id="rating"><%= shops.rating %></h4>
+		<%= image_tag(shops.rating_url, id:'image-rating')%>
+		<p id="neighborhood"><%= shops.neighborhood %></p>
+	</div>
+	<div class="details col-md-6 col-s-6 col-xs-12">
+		<h3 id="address"><%= shops.address %></h3>
+		<h4 id="cross"><%= shops.cross %></h4>
+		<h4 id="city"><%= shops.city%>, <%= shops.state%> <%= shops.zip %></h4>
+		<p id="snippet"><%= shops.snippet %></p>
+		<h5 id="phone"><%= shops.phone %></h5>
+	<% end %>
+	</div>
+
+	</div>
+
+</div>

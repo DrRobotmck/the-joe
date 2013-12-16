@@ -1,32 +1,23 @@
-<div class="container col-md-12">
-	<div class="header col-md-12">
-	<%= button_tag link_to('Shops', root_path), class: 'headbutts'%>
-	<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-	<% unless logged_in? %>
-	<%= button_tag link_to('Log In', new_session_path), class: 'headbutts'%>
-	<% else %>
-	<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-	<% end %>
+<div class="back drinks"></div>
+<div class="container">
+<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image'), root_path%>
+<div class= "row">
+
+	
+	<div class="header col-md-10 col-s-10 col-xs-12">	
+		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
+		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+		<% unless logged_in? %>
+		<%= button_tag link_to('Sign Up', new_user_path), class: 'headbutts'%>
+		<% else %>
+		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+		<% end %>
+
 	</div>
+	
+	<div class="words col-md-12 col-s-12 col-xs-12">
+		<div class="wordlist col-md-4 col-s-2 col-xs-4"></div>
 
-
-<div class="row">
-	<div id="navbar" class="navbar glossary col-md-10">
-		<ul class="nav nav-tabs">
-			<% for drink in @drinks do %>
-				<li class"col-md-1"><a class="navbutt"href="#<%= drink.id%>"><%= drink.name%></a>
-				</li>
-			<%end%>
-			
-		</ul>
-</div></div>
-<div data-spy="scroll" data-target="#navbar" class = "scrolly col-md-8">
-		<%for drink in @drinks do%>
-		<h4 id="<%=drink.id%>"></h4>
-		<p class="drink">
-		<%= drink.definition%>
-		</p>
-		<%end%>
-
+		<div class="definition col-md-8 col-s-6 col-xs-8"></div>
 	</div>
 </div>

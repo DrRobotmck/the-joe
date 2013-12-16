@@ -1,0 +1,42 @@
+<div class="back new"></div>
+<div class="container">
+	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image'), root_path%>
+	<div class="header col-md-10 col-s-10 col-xs-2">	
+		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
+		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+		<% unless logged_in? %>
+		<%= button_tag link_to('Sign Up', new_user_path), class: 'headbutts'%>
+		<% else %>
+		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+		<% end %>
+
+	</div>
+
+	<div class= "mainpage-new-user col-md-12 col-s-12 col-xs-12">
+
+		<div class="new-user-form col-md-4 col-s-4 col-xs-4">
+			<%=form_for @user, url: {action: "create"}, html: {class: "new_user_form"} do	|u| %>
+			<%= u.label :name, "Name"%>
+			<p><%=	u.text_field :name%></p>
+			<%=	u.label :email, "Email"%>
+			<p>	<%=	u.text_field :email%></p>
+			<%=	u.label :password, "Password"%>
+			<p><%=	u.password_field :password %></p>
+			<%=	u.label :password_confirmation, "Password confirmation"%>
+			<p>	<%= u.password_field :password_confirmation%></p>
+			<%= u.submit "Submit" %>
+			<%end%>
+		</div>
+		<div class= "session col-md-4 col-s-4 col-xs-4">
+			<%= form_tag session_path, :method => :post do %>
+			<%= label_tag :logemail, "Email -" %>
+			<p><%= text_field_tag :logemail %></p>
+
+			<%= label_tag :logpassword, "Enter password" %>
+			<p><%= password_field_tag :logpassword  %></p>
+
+			<%= submit_tag "Login"%>
+			<%end%>
+		</div>
+
+	</div>

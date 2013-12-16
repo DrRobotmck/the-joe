@@ -1,0 +1,79 @@
+div.menu{
+	background: rgba(140,130,130,.4);
+	height: 6500px;
+	margin-top: 18em;
+}
+.scroll-nav {
+  position: absolute;
+}
+.scroll-nav.fixed .scroll-nav__wrapper {
+  position:fixed;
+  top: 10em;
+  left: 1em;
+  overflow: scroll;
+  height: 600px;
+}
+
+.scroll-nav__wrapper {
+  border: 1px solid indianred;
+  background: rgba(34,31,31,.8);
+  border-radius: 6px;
+  padding: 10px 5px;
+}
+
+.scroll-nav__heading {
+  border-bottom: 2px solid indianred;
+  color: lavenderblush;
+  display: block;
+  font-family: "Alfa Slab One", Georgia, serif;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  text-align: center;
+  text-shadow: 0 -1px 0 #006186;
+  width: 10em;
+}
+h3.title{
+	color:indianred;
+}
+
+div.wordlist{
+  border-radius: 20px;
+  background: rgba(34,31,31,.5);
+  top: 5em;
+  left:1em;
+  height: 650px;
+  overflow: scroll;
+  font-size: 1.5em;
+  color: lavenderblush;
+  text-align: center;
+}
+.wordlist a:hover{
+  color: darkseagreen;
+  text-decoration: none;
+}
+div.definition{
+  text-align: center;
+  border-radius: 20px;
+  top:7.5em;
+  left: 3em;
+  background: rgba(34,31,31,.5);
+  height: 650px;
+  overflow: scroll;
+}
+.definition p{
+  font-size: 1.7em;
+  color: cornsilk;
+  text-align:left;
+}
+.definition h3{
+  font-size: 2em;
+  color: darkseagreen;
+}
+.words{
+  /*left:8%;*/
+}
+#map-canvas { width:500px; height:400px; }
+    .layer-wizard-search-label { font-family: sans-serif };
