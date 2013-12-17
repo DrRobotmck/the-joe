@@ -17,5 +17,6 @@
 //= require bootstrap.js
 //= require scrollNav.js
 //= require underscore
+//= require list
 
 

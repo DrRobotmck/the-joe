@@ -1,0 +1,22 @@
+div.info{
+	height: 240px;
+	text-align: center;
+	margin-top: 1.25em;
+}
+.info h2{
+	color:cornsilk;
+}
+.info h4{
+	color:darkseagreen;
+}
+.info p{
+	color:darkseagreen;
+}
+div.details{
+	height: 240px;
+	margin-top:1.25em;
+	color:cornsilk; 
+}
+.details h3{
+	color:darkseagreen;
+}

@@ -12,23 +12,40 @@
 
 	</div>
 	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
-	<div class= "info col-md-6 col-s-6 col-xs-12">
-	<% for shops in @shop do %>
-		<%= image_tag(shops.image, id: "image")%>
-		<h2 id="name"><%= shops.name %></h2>
-		<h4 id="rating"><%= shops.rating %></h4>
-		<%= image_tag(shops.rating_url, id:'image-rating')%>
-		<p id="neighborhood"><%= shops.neighborhood %></p>
+	<br>
+	<div id="coffee-shop-list">
+    <input class="search" placeholder="Search lovely things" />
+    <ul style="float:right;"class="sort-by">
+        <li class="sort btn" data-sort="name">Sort by name</li>
+        <li class="sort btn" data-sort="rating">Sort by rating</li>
+        <li class="sort btn" data-sort="neighborhood">Sort by neighborhood</li>
+    </ul>
+    <ul class="filter">
+        <li class="btn" id="filter-none">Show all</li>
+        <li class="btn" id="filter-games">Only show games</li>
+        <li class="btn" id="filter-beverages">Only show beverages</li>
+    </ul>
+		<ul class="list">
+		<% for shops in @shop do %>
+		<li>
+		<div class= "info col-md-4 col-s-6 col-xs-12">
+			<%= image_tag(shops.image, id: "image")%>
+			<h2 id="name" class="name"><%= shops.name %></h2>
+			<h4 id="rating" class="rating"><%= shops.rating %></h4>
+			<%= image_tag(shops.rating_url, id:'image-rating')%>
+			<p id="neighborhood" class="neighborhood"><%= shops.neighborhood %></p>
+		</div>
+		<div class="details col-md-6 col-s-6 col-xs-12">
+			<h3 id="address"><%= shops.address %></h3>
+			<h5 id="cross"><%= shops.cross %></h5>
+			<h5 id="city"><%= shops.city%>, <%= shops.state%> <%= shops.zip %></h5>
+			<p id="snippet" class="snippet"><%= shops.snippet %></p>
+			<h5 id="phone"><%= shops.phone %></h5>
+		</div>	
+		</li>
+		<% end %>
+	</ul>
 	</div>
-	<div class="details col-md-6 col-s-6 col-xs-12">
-		<h3 id="address"><%= shops.address %></h3>
-		<h4 id="cross"><%= shops.cross %></h4>
-		<h4 id="city"><%= shops.city%>, <%= shops.state%> <%= shops.zip %></h4>
-		<p id="snippet"><%= shops.snippet %></p>
-		<h5 id="phone"><%= shops.phone %></h5>
-	<% end %>
-	</div>
-
-	</div>
+	
 
 </div>
