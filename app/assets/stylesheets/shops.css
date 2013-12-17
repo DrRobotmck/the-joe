@@ -15,8 +15,29 @@ div.info{
 div.details{
 	height: 240px;
 	margin-top:1.25em;
+	margin-left: 100px;
 	color:cornsilk; 
 }
 .details h3{
 	color:darkseagreen;
+}
+.mapandsearch{
+	text-align: center;
+	background: rgba(34,31,31,.7);
+	z-index: 1;
+	width:60%;
+	top:9em;
+	/*left: 1em;*/
+	color: darkseagreen;
+	position: fixed;
+	/*margin: 0 auto;*/
+	-webkit-filter:drop-shadow(6px 6px 25px rgba(34,31,31,.9));
+}
+#googft-mapCanvas{
+	top:.25em;
+	margin: 0;
+}
+.listed{
+	z-index: 0;
+	margin-top: 27em;
 }

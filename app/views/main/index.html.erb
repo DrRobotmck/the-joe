@@ -5,8 +5,9 @@
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
 		<% unless logged_in? %>
-		<%= button_tag link_to('Sign Up', new_user_path), class: 'headbutts'%>
+		<%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
 		<% else %>
+		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
 		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
 		<% end %>
 

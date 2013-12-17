@@ -19,6 +19,25 @@ def create
 		render :new
 	end
 end
+def edit
+end
+def update
+	user = User.find(session[:user_id])
+	if user.update(user_params)
+		redirect_to user_path(user)
+	else
+		render :edit
+	end 
+end
+def destroy
+	user = User.find(session[:user_id])
+	if user.destroy
+		redirect_to root_path
+		session[:user_id] = nil
+	else
+		redirect_to user_path(user)
+	end
+end
 
 private
 

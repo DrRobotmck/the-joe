@@ -34,8 +34,8 @@ div.back.new{
 	background-size: 111%;
 }
 .image{
-	z-index: 2;
-	left:6em;
+	z-index: 1;
+	left:5em;
 	position: absolute;
 	top:-2em;
 }
@@ -70,12 +70,12 @@ div.back.new{
 	height:600px;
 }
 .mainpage-shops{
-	top:10em;
+	top:7em;
 	/*left:20%;*/
 	position: fixed;
 	background: rgba(34,31,31,.4);
 	border-radius: 20px;
-	height:600px;
+	height:650px;
 	overflow: scroll;
 }
 .shop-form{
@@ -92,9 +92,9 @@ div.back.new{
 	background: rgba(34,31,31,.4);
 	color:lavenderblush;
 	display:inline-block;
-	position:relative;
+	/*position:relative;*/
 	margin-right: 1px;
-	width:4em;
+	width:5em;
 	height:2em;
 	font-size: 1em;
 	font-family:Helvetica;

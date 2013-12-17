@@ -1,0 +1,11 @@
+<%=form_for @user, html: {class: "new_user_form"} do	|u| %>
+			<%= u.label :name, "Name"%>
+			<p><%=	u.text_field :name%></p>
+			<%=	u.label :email, "Email"%>
+			<p>	<%=	u.text_field :email%></p>
+			<%=	u.label :password, "Password"%>
+			<p><%=	u.password_field :password %></p>
+			<%=	u.label :password_confirmation, "Password confirmation"%>
+			<p>	<%= u.password_field :password_confirmation%></p>
+			<%= u.submit "Submit" %>
+			<%end%>
