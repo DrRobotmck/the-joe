@@ -13,7 +13,9 @@
 
 	</div>
 	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
-	<div class=''></div>
+	<div class=''>
+		<div id="googft-mapCanvas"></div>
+	</div>
 		<div class= "single-shop col-md-6 col-s-12 col-xs-12">
 			<img class="main picture"src="<%= @shop.image %>">
 			<h2 class="name"><%=@shop.name%></h2>
@@ -27,6 +29,6 @@
 
 			<p><%= @shop.snippet%></p>
 
-			<button class="favorite">Add to List</button>
+			<%= button_to("Add to List", favorite_shop_path)%>
 		</div>
 	</div>

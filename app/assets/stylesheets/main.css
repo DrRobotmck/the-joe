@@ -57,7 +57,7 @@ div.back.new{
 	top:10em;
 	/*left:12%;*/
 	position: fixed;
-	background: rgba(34,31,31,.4);
+	background: rgba(34,31,31,.9);
 	border-radius: 20px;
 	height:600px;
 }
@@ -65,7 +65,7 @@ div.back.new{
 	top:10em;
 	/*left:20%;*/
 	position: fixed;
-	background: rgba(34,31,31,.4);
+	background: rgba(34,31,31,.8);
 	border-radius: 20px;
 	height:600px;
 }
@@ -73,7 +73,7 @@ div.back.new{
 	top:7em;
 	/*left:20%;*/
 	position: fixed;
-	background: rgba(34,31,31,.4);
+	background: rgba(34,31,31,.9);
 	border-radius: 20px;
 	height:650px;
 	overflow: scroll;
