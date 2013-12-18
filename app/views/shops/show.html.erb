@@ -29,8 +29,9 @@
 			<h6 class="phone"><%=@shop.phone%></h6>
 
 			<p><%= @shop.snippet%></p>
-
+			<%if logged_in? %>
 			<%= button_to("Add to List", favorite_shop_path)%>
+			<%end%>
 		</div>
 	</div>
 	<script type="text/javascript">
