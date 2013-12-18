@@ -12,7 +12,9 @@ describe "a user makes an account" do
 
 		click_button("Submit")
 
-		expect(page).to have_content 'Home'
+		expect(page).to have_content 'Welcome!'
+		page.has_css? "h4.name", text: "Ape"
+		page.has_css? "button.editaccount", count: 1
 	end
 end
 
@@ -25,7 +27,8 @@ describe "sign in" do
 		fill_in('Enter password', with: "poop")
 
 		click_button("Login")
-		expect(page).to have_content 'Home'
+		expect(page).to have_content "#{a.name}", count: 1
+		page.has_css? "button.editaccount", count: 1
 	end
 	it "has no account" do
 		visit new_user_path
@@ -35,6 +38,6 @@ describe "sign in" do
 
 		click_button("Login")
 
-		expect(page).to have_content 'Sign Up'
+		expect(page).to have_content 'Account'
 	end
 end

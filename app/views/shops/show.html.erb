@@ -1,0 +1,32 @@
+<div class="back shops"></div>
+<div class="container">
+	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
+	<div class="header col-md-9">	
+		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
+		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+		<% unless logged_in? %>
+		<%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
+		<% else %>
+		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
+		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+		<% end %>
+
+	</div>
+	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
+	<div class=''></div>
+		<div class= "single-shop col-md-6 col-s-12 col-xs-12">
+			<img class="main picture"src="<%= @shop.image %>">
+			<h2 class="name"><%=@shop.name%></h2>
+			<img class="rating"src="<%=@shop.rating_url%>">
+			<h5 class="rating"><%=@shop.rating%></h5>
+			<h4 class="neighborhood"><%=@shop.neighborhood%></h4>
+			<h4 class="address"><%=@shop.address%></h4>
+			<h5 class="cross"><%=@shop.cross%></h5>
+			<h5 class="city"><%=@shop.city%>, <%=@shop.zip%></h5>
+			<h6 class="phone"><%=@shop.phone%></h6>
+
+			<p><%= @shop.snippet%></p>
+
+			<button class="favorite">Add to List</button>
+		</div>
+	</div>

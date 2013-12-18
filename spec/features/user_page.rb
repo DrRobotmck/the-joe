@@ -11,7 +11,7 @@ describe "User has logged in" do
 		expect(page).to have_content 'Welcome!'
 		expect(page).to have_content "#{user.name}"
 		expect(page).to have_content "#{user.email}"
-		page.has_css? "button.editaccount"
+		page.has_css? "button.editaccount", text: "Edit Account"
 	end
 	it "allows you to edit your account" do
 		visit new_user_path
@@ -22,6 +22,6 @@ describe "User has logged in" do
 
 		click_button("Edit Account")
 
-		expect(page).to have_content 'Edit your account information'
+		page.assert_selector 'h2.editTitle', text: 'Edit your account information'
 	end
 end

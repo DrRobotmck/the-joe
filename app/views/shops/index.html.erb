@@ -1,7 +1,4 @@
-<script type="text/javascript">
-	initialize();
-	var featureList = new List('coffee-shop-list', options);
-</script>
+
 <div class="back shops"></div>
 <div class="container">
 	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
@@ -18,38 +15,40 @@
 	</div>
 	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
 		<div id="coffee-shop-list">
-			<div style="position:fixed"class="mapandsearch col-md-9">
+			<div style="position:fixed"class="mapandsearch col-md-5 col-s-5 col-xs-5">
 				<div id="googft-mapCanvas"></div>
 				<br>
 				<ul class="sort-by">
-					<input class="search" placeholder="Search lovely things" />
-					<li class="sort btn" data-sort="name">Sort by name</li>
-					<li class="sort btn" data-sort="rating">Sort by rating</li>
-					<li class="sort btn" data-sort="neighborhood">Sort by neighborhood</li>
+        <input class="search" type="text" id="search-string_0" placeholder="Search locations">
+        <input type="button" onclick="changeMap_0()" value="Search">
+					<li class="sort btn" data-sort="name">Sort by Name</li>
+					<li class="sort btn" data-sort="rating">Sort by Rating</li>
+					<li class="sort btn" data-sort="neighborhood">Sort by Hood</li>
 				</ul>
 			</div>
-			<div class="listed">
-			<ul class="list">
-				<% for shops in @shop do %>
-				<li>
-					<div class= "info col-md-5 col-s-6 col-xs-12">
-						<%= image_tag(shops.image, id: "image")%>
-						<h2 id="name" class="name"><%= shops.name %></h2>
-						<h4 id="rating" class="rating"><%= shops.rating %></h4>
-						<%= image_tag(shops.rating_url, id:'image-rating')%>
-						<p id="neighborhood" class="neighborhood"><%= shops.neighborhood %></p>
-					</div>
-					<div class="details col-md-5 col-s-6 col-xs-12">
-						<h3 id="name"><%= shops.name%></h3>
-						<h3 id="address"><%= shops.address %></h3>
-						<h5 id="cross"><%= shops.cross %></h5>
-						<h5 id="city"><%= shops.city%>, <%= shops.state%> <%= shops.zip %></h5>
-						<p id="snippet" class="snippet"><%= shops.snippet %></p>
-						<h5 id="phone"><%= shops.phone %></h5>
-					</div>	
-				</li>
-				<% end %>
-			</ul>
+			<div class="listed col-md-12 col-s-12 col-xs-12">
+				
+				<ul class="list">
+					<!-- <h4 class="click">Click for more info &#8594;</h4> -->
+					<% for shops in @shop do %>
+					<a href="<%= shop_path(shops)%>"><li>
+						<div class="details col-md-5 col-s-6 col-xs-12 more">
+							<%= image_tag(shops.image, id: "image")%>
+							<h4 id="name" class="name"><%= shops.name %></h4>
+							<h6 id="rating" class="rating"><%= shops.rating %></h6>
+							<%= image_tag(shops.rating_url, id:'image-rating')%>
+							<h6 id="neighborhood" class="neighborhood"><%= shops.neighborhood %></h6>
+							<h5 id="address"><%= shops.address %></h5>
+							<h6 id="cross"><%= shops.cross %></h6>
+							<h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
+						</div>	
+					</li></a>
+					<% end %>
+				</ul>
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		initialize();
+		list();
+	</script>

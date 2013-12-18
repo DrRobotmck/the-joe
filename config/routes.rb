@@ -4,7 +4,7 @@ TheJoe::Application.routes.draw do
   resources :drinks, only: [:index,:show]
   resources :main, only: [:index, :show]
   resources :users
-  resources :shops, only: [:index]
+  resources :shops, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

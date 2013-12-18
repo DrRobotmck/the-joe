@@ -1,3 +1,4 @@
+
 function initialize() {
   function currentPosition(position) {
     map.setCenter(new google.maps.LatLng(position.coords.latitude, 
@@ -12,47 +13,14 @@ function initialize() {
   }
   var mapDiv = document.getElementById('googft-mapCanvas');
   mapDiv.style.width = isMobile ? '100%' : '92%';
-  mapDiv.style.height = isMobile ? '100%' : '300px';
+  mapDiv.style.height = isMobile ? '100%' : '570px';
 
 
   var map = new google.maps.Map(mapDiv, {
     center: navigator.geolocation.getCurrentPosition(currentPosition),
-    zoom: 14,
+    zoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
-
-  layer = new google.maps.FusionTablesLayer({
-    map: map,
-    heatmap: { enabled: false },
-    query: {
-      select: "col6",
-      from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
-      where: ""
-    },
-    options: {
-      styleId: 4,
-      templateId: 5
-    }
-  });
-
-  if (isMobile) {
-    var legend = document.getElementById('googft-legend');
-    var legendOpenButton = document.getElementById('googft-legend-open');
-    var legendCloseButton = document.getElementById('googft-legend-close');
-    legend.style.display = 'none';
-    legendOpenButton.style.display = 'block';
-    legendCloseButton.style.display = 'block';
-    legendOpenButton.onclick = function() {
-      legend.style.display = 'block';
-      legendOpenButton.style.display = 'none';
-    }
-    legendCloseButton.onclick = function() {
-      legend.style.display = 'none';
-      legendOpenButton.style.display = 'block';
-    }
-  }
   var style = [
   {
     featureType: 'landscape',
@@ -108,7 +76,7 @@ function initialize() {
     featureType: 'transit.station',
     elementType: 'all',
     stylers: [
-    { color: "#E9D1BE"}
+    { visibility: 'off'}
     ]
   },
   {
@@ -119,6 +87,40 @@ function initialize() {
     ]
   }
   ];
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
+  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+
+  layer = new google.maps.FusionTablesLayer({
+    map: map,
+    heatmap: { enabled: false },
+    query: {
+      select: "col6",
+      from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
+      where: ""
+    },
+    options: {
+      styleId: 4,
+      templateId: 5
+    }
+  });
+
+  if (isMobile) {
+    var legend = document.getElementById('googft-legend');
+    var legendOpenButton = document.getElementById('googft-legend-open');
+    var legendCloseButton = document.getElementById('googft-legend-close');
+    legend.style.display = 'none';
+    legendOpenButton.style.display = 'block';
+    legendCloseButton.style.display = 'block';
+    legendOpenButton.onclick = function() {
+      legend.style.display = 'block';
+      legendOpenButton.style.display = 'none';
+    }
+    legendCloseButton.onclick = function() {
+      legend.style.display = 'none';
+      legendOpenButton.style.display = 'block';
+    }
+  }
+  
   var styledMapType = new google.maps.StyledMapType(style, {
     map: map,
     name: 'Styled Map'
@@ -126,4 +128,18 @@ function initialize() {
   map.mapTypes.set('map-style', styledMapType);
   map.setMapTypeId('map-style');
 }
+function changeMap_0() {
+      var whereClause;
+      var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
+      if (searchString != '--Select--') {
+        whereClause = "'Name' CONTAINS IGNORING CASE '" + searchString + "'";
+      }
+      layer.setOptions({
+        query: {
+          select: "col6",
+          from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
+          where: whereClause
+        }
+      });
+    }
 google.maps.event.addDomListener(window, 'load', initialize);
