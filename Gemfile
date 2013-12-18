@@ -70,3 +70,6 @@ gem 'yelpster'
 
 # Geocoder gem
 gem 'geocoder'
+
+# Heroku dependency
+gem 'rails_12factor', group: :production
