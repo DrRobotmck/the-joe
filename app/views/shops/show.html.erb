@@ -2,6 +2,7 @@
 <div class="container">
 	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
 	<div class="header col-md-9">	
+		<%= button_tag link_to('Home', root_path), class: 'headbutts'%>
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
 		<% unless logged_in? %>
@@ -13,9 +14,9 @@
 
 	</div>
 	<div class= "mainpage-shops col-md-12 col-s-12 col-xs-12">
-	<div class=''>
-		<div id="googft-mapCanvas"></div>
-	</div>
+		<div class='col-md-6 col-s-12 col-xs-12'>
+			<div id="googft-mapCanvas"></div>
+		</div>
 		<div class= "single-shop col-md-6 col-s-12 col-xs-12">
 			<img class="main picture"src="<%= @shop.image %>">
 			<h2 class="name"><%=@shop.name%></h2>
@@ -32,3 +33,6 @@
 			<%= button_to("Add to List", favorite_shop_path)%>
 		</div>
 	</div>
+	<script type="text/javascript">
+		mapSingle("<%=@shop.address%>", "<%=@shop.address%> <%=@shop.zip%>")
+	</script>

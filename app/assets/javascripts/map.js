@@ -1,4 +1,4 @@
-
+function mapAll(){
 function initialize() {
   function currentPosition(position) {
     map.setCenter(new google.maps.LatLng(position.coords.latitude, 
@@ -143,3 +143,5 @@ function changeMap_0() {
       });
     }
 google.maps.event.addDomListener(window, 'load', initialize);
+initialize();
+}

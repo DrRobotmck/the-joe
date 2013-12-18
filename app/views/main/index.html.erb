@@ -2,6 +2,7 @@
 <div class="container">
 	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
 	<div class="header col-md-9">	
+		<%= button_tag link_to('Home', root_path), class: 'headbutts'%>
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
 		<% unless logged_in? %>
@@ -15,26 +16,23 @@
 
 	<div class= "mainpage col-md-12 col-s-12 col-xs-12">
 		<div class="shop-form col-md-6 col-s-10 col-xs-10">
-			<form class="shops">
-				<label class="homelabel">Search for a coffee shop</label>
+			<form action="/search"class="shops">
+				<label class="homelabel">Search for a coffee shop by neighborhood, name, city, or zip code!</label>
 				<br>
-				<input class="searchbox" type="text" name="shop-search" placeholder="Type a name"/>
-
-				<br>				
-				<label class="homelabel">OR</label>
-				<br>
-				<input class="searchbox" type="text" name="shop-search" placeholder="Type a zip code"/>
-				<br>
-				<button class="search">Search</button>
+				<input class="searchbox" type="search" name="shopsearch" placeholder="Type a name"/>
+				<button class="searchable">Search</button>
 			</form>
+			<br>
+			<label class="homelabel">Or view all coffee shops</label>
+			<%= link_to "All Coffee Shops", shops_path %>
 		</div>
 		<div class="drink-form col-md-6 col-s-8 col-xs-10">
 			<form action="/drinks"class="drinks">
 				<label class="homelabel">Look up a drink</label>
 				<br>
-				<input class="searchbox"type="hidden" name="drink-search" placeholder="Type a name">
+				<input class="searchbox"type="hidden" name="drinksearch" placeholder="Type a name">
 				<br>
-				<button class="searchbox">Search</button>
+				<button class="searchbox">View Glossary</button>
 			</form>
 		</div>
 	</div>

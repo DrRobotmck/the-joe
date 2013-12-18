@@ -1,7 +1,8 @@
 <div class="back new"></div>
 <div class="container">
   <%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image'), root_path%>
-  <div class="header col-md-10 col-s-10 col-xs-2">  
+  <div class="header col-md-10 col-s-10 col-xs-2">
+  <%= button_tag link_to('Home', root_path), class: 'headbutts'%>  
     <%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
     <%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
     <% unless logged_in? %>
@@ -12,15 +13,30 @@
     <% end %>
 
   </div>
-<div class= "mainpage-new-user col-md-12 col-s-12 col-xs-12">
+  <div class= "mainpage-new-user col-md-12 col-s-12 col-xs-12">
 
     <div class="new-user-form col-md-6 col-s-4 col-xs-4">
-<h2>Welcome!</h2>
-<%=button_to("Edit Account",{:action => :edit}, {:method => :get}) %>
+      <h2>Welcome!</h2>
+      <%=button_to("Edit Account",{:action => :edit}, {:method => :get}) %>
 
-<h2 class="name"><%=@user.name%></h2>
-<h4 class="email"><%=@user.email%></h4>
+      <h2 class="name"><%=@user.name%></h2>
+      <h4 class="email"><%=@user.email%></h4>
 
-</div>
-</div>
+    </div>
+    <div class= "favorites col-md-6 col-s-4 col-xs-4">
+        <h2>My List</h2>
+        <ul>
+         <% for shops in @user.shops do%>
+          <li>
+            <img src="<%=shops.image%>">
+            <h2 class="name"><%=shops.name%></h2>
+            <img class="rating"src="<%=shops.rating_url%>">
+            <h4 class="neighborhood"><%=shops.neighborhood%></h4>
+            <h4 class="address"><%=shops.address%></h4>
+            <%= button_to("Remove", unfavorite_shop_path(shops), :method => :delete)%>
+          </li>
+          <%end%>
+        </ul>
+    </div>
+  </div>
 </div>

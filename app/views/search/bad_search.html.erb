@@ -1,7 +1,7 @@
-<div class="back new"></div>
+<div class="back home"></div>
 <div class="container">
-	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image'), root_path%>
-	<div class="header col-md-10 col-s-10 col-xs-2">	
+	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
+	<div class="header col-md-9">	
 	<%= button_tag link_to('Home', root_path), class: 'headbutts'%>
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
@@ -13,16 +13,11 @@
 		<% end %>
 
 	</div>
-	<div class= "mainpage-new-user col-md-12 col-s-12 col-xs-12">
-
-		<div class="new-user-form col-md-4 col-s-4 col-xs-4">
-			<h2>Welcome!</h2>
-			<%=button_to("My Account",{:action => :edit}, {:method => :get}) %>
-
-			<h2 class="editTitle">Edit your account information below</h2>
-
-			<%= render "form"%>
-			<%= button_to("Delete Account", {:action => :destroy}, {:method => :delete})%>
+	<div class= "mainpage col-md-12 col-s-12 col-xs-12">
+		<div class="listed col-md-12 col-s-12 col-xs-12">
+		<img src="http://24.media.tumblr.com/tumblr_lzr276wu0y1qfw7rho1_400.gif">
+		<h1>Sorry, We don't have any record of that. Should we?</h1>
+		<h3>Send an email to the_joe@icloud.com to add your favorite coffee shop</h3>
 		</div>
 	</div>
 </div>

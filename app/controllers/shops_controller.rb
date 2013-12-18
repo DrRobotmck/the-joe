@@ -17,12 +17,18 @@ class ShopsController < ApplicationController
 	shop = Shop.find(params[:id])
 	if user.favorite(shop)
 		redirect_to shop_path(shop)
+	else
+		redirect_to shop_path(shop)
 	end
+
 end
 
 def unfavorite
 	user = User.find(session[:user_id])
-	if user.destroy(shop)
+	shop = Shop.find(params[:id])
+	if user.unfavorite(shop)
+		redirect_to user_path(user)
+	else
 		redirect_to user_path(user)
 	end
 end
