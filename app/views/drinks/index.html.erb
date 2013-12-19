@@ -8,12 +8,12 @@ $(function(){
 
 <div class="back drinks"></div>
 <div class="container">
-<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image'), root_path%>
+<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image'), root_path%>
 <div class= "row">
 
 	
 	<div class="header col-md-10 col-s-10 col-xs-12">
-		<%= button_tag link_to('Home', root_path), class: 'headbutts'%>	
+		
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
 		<% unless logged_in? %>

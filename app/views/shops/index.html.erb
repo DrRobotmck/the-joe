@@ -1,9 +1,8 @@
 
 <div class="back shops"></div>
 <div class="container">
-	<%= link_to image_tag('joe2.svg', width:275, height:275, class: 'image img-responsive'), root_path%>
+	<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image img-responsive'), root_path%>
 	<div class="header col-md-9">	
-	<%= button_tag link_to('Home', root_path), class: 'headbutts'%>
 		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
 		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
 		<% unless logged_in? %>
