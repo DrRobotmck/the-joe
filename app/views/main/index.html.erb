@@ -14,27 +14,26 @@
 
 	</div>
 
-	<div class= "mainpage col-md-12 col-s-12 col-xs-12">
-		<div class="shop-form col-md-6 col-s-10 col-xs-10">
+	<div class= "mainpage col-md-4 col-s-12 col-xs-12">
+		<div class="shop-form col-md-12 col-s-10 col-xs-10">
 			<form action="/search"class="shops">
-				<label class="homelabel">Search for a coffee shop by neighborhood, name, city, or zip code!</label>
-				<br>
-				<input class="searchbox" type="search" name="shopsearch" placeholder="Type a name"/>
-				<button class="searchable">Search</button>
+				<label class="homelabel">Search for a coffee shop</label>
+				<br><br>
+				<input class="searchbox" type="search" name="shopsearch" placeholder="Name, hood or zip"/><br><br>
+				<button class="searchbox">Search</button>
 			</form>
 			<br>
-			<label class="homelabel">Or view all coffee shops</label>
-			<%= link_to "All Coffee Shops", shops_path %>
-		</div>
-		<div class="drink-form col-md-6 col-s-8 col-xs-10">
-			<form action="/drinks"class="drinks">
+			<label class="homelabel">Or</label>
+			<br><br>
+			<%= button_tag link_to("View All", shops_path), class: "searchbox" %><br><br>
+		<form action="/drinks"class="drinks">
 				<label class="homelabel">Look up a drink</label>
 				<br>
 				<input class="searchbox"type="hidden" name="drinksearch" placeholder="Type a name">
 				<br>
 				<button class="searchbox">View Glossary</button>
 			</form>
-		</div>
+			</div>
 	</div>
 
 </div>

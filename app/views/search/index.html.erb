@@ -13,14 +13,14 @@
 		<% end %>
 
 	</div>
-	<div class= "mainpage col-md-12 col-s-12 col-xs-12">
+	<div class= "mainpage-search col-md-4 col-s-12 col-xs-12">
 		<div class="listed col-md-12 col-s-12 col-xs-12">
-
+		<div class="row">
 			<ul class="search_list">
+				<label class="search">Search Results</label>
 				<% for shops in @shops do %>
 				<li>
 					<a href="<%= shop_path(shops)%>">
-						<div class="details col-md-5 col-s-6 col-xs-12 more">
 							<%= image_tag(shops.image, id: "image")%>
 							<h4 id="name" class="name"><%= shops.name %></h4>
 							<h6 id="rating" class="rating"><%= shops.rating %></h6>
@@ -29,11 +29,10 @@
 							<h5 id="address"><%= shops.address %></h5>
 							<h6 id="cross"><%= shops.cross %></h6>
 							<h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
-						</div>
 					</a>	
 				</li>
 				<% end %>
-			</ul>
+			</ul></div>
 		</div>
 	</div>
 </div>

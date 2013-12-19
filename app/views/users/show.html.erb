@@ -13,11 +13,11 @@
     <% end %>
 
   </div>
-  <div class= "mainpage-new-user col-md-12 col-s-12 col-xs-12">
+  <div class= "mainpage-shops col-md-10 col-s-12 col-xs-12">
 
-    <div class="new-user-form col-md-6 col-s-4 col-xs-4">
+    <div class="user-page col-md-6 col-s-4 col-xs-4">
       <h2>Welcome!</h2>
-      <%=button_to("Edit Account",{:action => :edit}, {:method => :get}) %>
+      <%=link_to("Edit Account",{:action => :edit}, {:method => :get}) %>
 
       <h2 class="name"><%=@user.name%></h2>
       <h4 class="email"><%=@user.email%></h4>
@@ -28,7 +28,7 @@
         <ul>
          <% for shops in @user.shops do%>
           <li>
-            <img src="<%=shops.image%>">
+            <a href="<%= shop_path(shops)%>"><img src="<%=shops.image%>"></a>
             <h2 class="name"><%=shops.name%></h2>
             <img class="rating"src="<%=shops.rating_url%>">
             <h4 class="neighborhood"><%=shops.neighborhood%></h4>

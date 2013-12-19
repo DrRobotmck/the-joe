@@ -1,17 +1,3 @@
-div.info{
-	height: 240px;
-	text-align: center;
-	margin-top: 1.25em;
-}
-.info h2{
-	color:cornsilk;
-}
-.info h4{
-	color:darkseagreen;
-}
-.info p{
-	color:darkseagreen;
-}
 div.details{
 	height: 300px;
 	margin-left: 100px;
@@ -19,6 +5,9 @@ div.details{
 	color:cornsilk; 
 	position:relative;
 	float:right;
+	font-family: "Lato";
+	font-weight: 300;
+	line-height: 1.2em;
 }
 .details h3{
 	color:darkseagreen;
@@ -26,11 +15,13 @@ div.details{
 .mapandsearch{
 	height:630px;
 	text-align: center;
-	background: rgba(34,31,31,.7);
+	background: rgba(34,31,31,.6);
 	z-index: 1;
-	top:10em;
+	top:8em;
 	color: darkseagreen;
 	-webkit-filter:drop-shadow(6px 6px 25px rgba(34,31,31,.9));
+	font-family: "Lato";
+	font-weight: 300;
 }
 #googft-mapCanvas{
 	top:.25em;
@@ -39,11 +30,46 @@ div.details{
 .listed{
 	z-index: 0;
 	margin-top: 1em;
-	margin-left: 1em;
+	margin-left: 30%;
+	/*float:right;*/
 }
 ul.list{
 	text-align: center;
+	margin-right: 9.5em;
 }
 .more:hover{
 	border: 1px rgba(34,31,31,.3) dotted;
+}
+div.map{
+	top:4.5em;
+}
+div.single-shop{
+	top:11em;
+	text-align: center;
+	font-family: "Lato";
+	font-weight: 300;
+	color:cornsilk;
+	line-height: 1.2em;
+}
+.single-shop h2{
+	font-size: 1.5em;
+	margin-bottom: 10px;
+}
+h4.address{
+	font-size: 1.1em;
+}
+div.listed{
+	text-align: center;
+	float:right;
+}
+label.search{
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+.error{
+	font-family: "Lato";
+	font-size: 2em;
+	font-weight: 300;
+	color:cornsilk;
+	line-height: 1.5em;
 }

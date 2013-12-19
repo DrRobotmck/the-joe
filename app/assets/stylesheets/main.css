@@ -29,9 +29,10 @@ div.back.drinks{
 	height:100%;
 }
 div.back.new{
-	background:url(http://www.photographybyre.com/wp-content/uploads/2011/06/CoffeeBar-Downtown-Los-Angeles1.jpg);
+	background:url(http://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg);
 	height:100%;
 	background-size: 111%;
+	-webkit-filter: contrast(90%)blur(1px) sepia(.3);
 }
 .image{
 	z-index: 1;
@@ -43,34 +44,35 @@ div.back.new{
 	width:280px;
 	height:280px;
 }
-
+label.homelabel{
+	font-family: "ABeeZee";
+	font-size: 1.25em;
+	color:cornsilk;
+}
 .container{
 	z-index: 1;
 }
 .header{
 	position:fixed;
-	/*top: 10em;*/
+	z-index: 3;
 	height: 15%;
 	left:35%;
 }
 .mainpage{
-	top:10em;
-	/*left:12%;*/
-	position: fixed;
-	background: rgba(34,31,31,.9);
+	top:7em;
+	float: right;
+	background: rgba(34,31,31,.5);
 	border-radius: 20px;
-	height:600px;
+	height:415px;
 }
 .mainpage-new-user{
 	top:10em;
-	/*left:20%;*/
-	position: fixed;
-	background: rgba(34,31,31,.8);
+	float:right;
+	left:14%;
 	border-radius: 20px;
-	height:600px;
 }
 .mainpage-shops{
-	top:7em;
+	top:8em;
 	/*left:20%;*/
 	position: fixed;
 	background: rgba(34,31,31,.9);
@@ -78,68 +80,112 @@ div.back.new{
 	height:650px;
 	overflow: scroll;
 }
+.mainpage-search{
+	font-family: "Lato";
+	top:7em;
+	float:right;
+	background: rgba(34,31,31,.6);
+	border-radius: 20px;
+	height:650px;
+	overflow: scroll;
+}
+.mainpage-search a{
+	color: cornsilk;
+}
 .shop-form{
 	margin-top: 20%;
 	/*margin-bottom:27.5%;*/
-	border: 2px black solid;
 	height:35%;
+	text-align: center;
 }
 .shops{
 	text-align: center;
 }
 .headbutts{
+	font-family: "ABeeZee";
 	border:none;
 	background: rgba(34,31,31,.4);
-	color:lavenderblush;
+	color:cornsilk;
 	display:inline-block;
 	margin-right: 1px;
 	width:5em;
 	height:2em;
 	font-size: 1em;
-	font-family:Helvetica;
+	font-family:"ABeeZee";
 }
 .headbutts a:hover{
 	color: indianred;
 	text-decoration: none;
 }
-.drink-form{
-	margin-top: 20%;
-	border: 2px black solid;
-	height:35%;
-}
 .drinks{
 	text-align: center;
 }
 .searchbox{
-	height: 3em;
-	font-family: Helvetica;
-	font-size: 1.5em;
+	height: 2.25em;
+	font-family: "ABeeZee";
+	font-size: 1em;
 	text-align: center;
+	background: rgba(34,31,31,.2);
+	border:none;
+	color:cornsilk;
+}
+.searchbox:hover{
+	border: 2px indianred dotted;
+}
+input.searchbox{
+	border: 3px solid cornsilk;
 }
 label{
-	color: indianred;
+	color: darkseagreen;
 }
-.footer{
-	text-align: center;
-	height: 10%;
-	background: coral;
-	top:700px;
-}
-
 p.drink{
 	color:lavenderblush;
 }
-div.glossary{
-	top:11em;
-}
-#navbar{
-	background: rgba(100,149,237,.6);
-	left: 8.5em;
-}
-
 div.new-user-form{
-	top: 5em;
+	border-radius: 20% 20% 0 20%;
+	top: 6em;
+	margin-right: 2%;
+	background: rgba(34,31,31,.6);
+	height: 300px;
+
 }
-form.new-user-form{
-	top: 5em;
+.new-user-form form{
+	text-align: center;
+	margin:1em auto;
+	line-height: 1em;
+}
+label.user-form{
+	font-family: "Lato";
+	font-size: 1em;
+	margin-bottom: 5px;
+}
+.new-user-form input{
+	width:80%;
+	height: 1.5em;
+	font-family: "Lato";
+	font-size:1.1em;
+	margin-bottom: 3px;
+}
+div.session{
+	border-radius: 20% 20% 0 20%;
+	top:6em;
+	background: rgba(34,31,31,.6);
+	height: 300px;
+}
+.session form{
+	text-align: center;
+	margin: 5em auto;
+
+}
+.session input{
+	width: 80%;
+	height: 1.5em;
+	font-family: "Lato";
+	font-size:1.1em;
+	margin-bottom: 5px;
+}
+label.user-form-label{
+	font-size: 2em;
+	font-family: "Lato";
+	margin-bottom: 10px;
 }
