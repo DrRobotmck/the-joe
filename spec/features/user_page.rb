@@ -20,8 +20,8 @@ describe "User has logged in" do
 		fill_in('Enter password', with: 'poop' )
 		click_button("Login")
 
-		click_button("Edit Account")
+		click_link("Edit Account")
 
-		page.assert_selector 'h2.editTitle', text: 'Edit your account information'
+		page.assert_selector 'h2.salutation', text: 'Edit your account information below'
 	end
 end

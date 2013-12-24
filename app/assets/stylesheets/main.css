@@ -3,7 +3,7 @@ a{
 	text-decoration: none;
 }
 a:visited{
-	color:lavenderblush;
+	color:darkseagreen;
 }
 div.back{
 	z-index: -2;
@@ -54,7 +54,7 @@ label.homelabel{
 	font-family:"ABeeZee";
 }
 .headbutts a:hover{
-	color: lavenderblush;
+	color: darkseagreen;
 }
 .drinks{
 	text-align: center;
@@ -71,7 +71,7 @@ label.homelabel{
 	color: cornsilk;
 }
 .searchbox a:hover{
-	color:lavenderblush;
+	color:darkseagreen;
 }
 input.searchbox{
 	border: 1px solid cornsilk;
@@ -81,7 +81,7 @@ label{
 	color: darkseagreen;
 }
 p.drink{
-	color:lavenderblush;
+	color:darkseagreen;
 }
 div.new-user-form{
 	border-radius: 20% 20% 0 20%;

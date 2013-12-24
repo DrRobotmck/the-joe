@@ -20,11 +20,11 @@
 div#coffee-shop-list{
 	padding: .5em;
 	background: rgba(34,31,31,.4);
-	color:lavenderblush;
+	color:darkseagreen;
 }
 .more{
 	text-align: center;
-	color: lavenderblush;
+	color: cornsilk;
 	font-family: Lato;
 	font-weight: 300;
 	height: 260px;
@@ -51,6 +51,7 @@ div#coffee-shop-list{
 }
 .shop-nav{
 	margin-bottom:1em;
+	color:darkseagreen;
 }
 .name{
 	color: cornsilk;
@@ -82,6 +83,9 @@ div#coffee-shop-list{
 	font-family: "Lato";
 	font-weight: 300;
 	line-height: 1.2em;
+}
+.search{
+	height: 500px;
 }
 .salutation{
 	font-family: Lato;
