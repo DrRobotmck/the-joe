@@ -1,0 +1,10 @@
+<%= form_tag session_path, :method => :post do %>
+			<%= label_tag :tag,"Sign In", class: "user-form-label"%><br>
+			<%= label_tag :logemail, "Email -", class: "user-form" %><br>
+			<p><%= text_field_tag :logemail %></p>
+
+			<%= label_tag :logpassword, "Enter password", class: "user-form" %><br>
+			<p><%= password_field_tag :logpassword  %></p>
+
+			<%= submit_tag "Login", class: "searchbox"%>
+			<%end%>

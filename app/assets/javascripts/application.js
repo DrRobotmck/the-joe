@@ -14,8 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require bootstrap.js
-//= require scrollNav.js
 //= require underscore
 //= require list
 

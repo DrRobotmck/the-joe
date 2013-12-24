@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="small-3 large-2 columns">
+      <%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image'), root_path%>
+    </div>
+    <div class="small-9 large-10 columns">
+      <%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
+      <%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
+      <% unless logged_in? %>
+      <%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
+      <% else %>
+      <%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
+      <%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
+      <% end %>
+    </div>
+  </div>

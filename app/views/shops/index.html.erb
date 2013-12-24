@@ -1,201 +1,50 @@
 
 <div class="back shops"></div>
-<div class="container">
-	<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image img-responsive'), root_path%>
-	<div class="header col-md-9">	
-		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
-		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-		<% unless logged_in? %>
-		<%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
-		<% else %>
-		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
-		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-		<% end %>
 
-	</div>
-	<div class= "mainpage-shops col-md-10 col-s-12 col-xs-12">
-		<div id="coffee-shop-list">
-			<div style="position:fixed"class="mapandsearch col-md-5 col-s-5 col-xs-5">
-				<div id="googft-mapCanvas"></div>
-				<br>
-				<ul class="sort-by">
-        <input class="search" type="text" id="search-string_0" placeholder="Search locations">
-        <input class="searchbox"type="button" onclick="changeMap_0()" value="Search">
-					<li class="sort btn" data-sort="name">Sort by   Name</li>
-					<li class="sort btn" data-sort="rating">Rating</li>
-					<li class="sort btn" data-sort="neighborhood">Hood</li>
-				</ul>
-			</div>
-			<div class="listed col-md-7 col-s-5 col-xs-12">
-				
-				<ul class="list">
-					<!-- <h4 class="click">Click for more info &#8594;</h4> -->
-					<% for shops in @shop do %>
-					<li>
-					<a href="<%= shop_path(shops)%>">
-						<div class="details col-md-5 col-s-6 col-xs-12 more">
-							<%= image_tag(shops.image, id: "image")%>
-							<h4 id="name" class="name"><%= shops.name %></h4>
-							<h6 id="rating" class="rating"><%= shops.rating %></h6>
-							<%= image_tag(shops.rating_url, id:'image-rating')%>
-							<h6 id="neighborhood" class="neighborhood"><%= shops.neighborhood %></h6>
-							<h5 id="address"><%= shops.address %></h5>
-							<h6 id="cross"><%= shops.cross %></h6>
-							<h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
-						</div>
-						</a>	
-					</li>
+  <%= render "layouts/header" %>
 
-					<% end %>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<script type="text/javascript">
-		function initialize() {
-  function currentPosition(position) {
-    map.setCenter(new google.maps.LatLng(position.coords.latitude, 
-      position.coords.longitude));
-  };
-  google.maps.visualRefresh = true;
-  var isMobile = (navigator.userAgent.toLowerCase().indexOf('android') > -1) ||
-  (navigator.userAgent.match(/(iPod|iPhone|iPad|BlackBerry|Windows Phone|iemobile)/));
-  if (isMobile) {
-    var viewport = document.querySelector("meta[name=viewport]");
-    viewport.setAttribute('content', 'initial-scale=1.0, user-scalable=no');
-  }
-  var mapDiv = document.getElementById('googft-mapCanvas');
-  mapDiv.style.width = isMobile ? '100%' : '92%';
-  mapDiv.style.height = isMobile ? '100%' : '570px';
+  <div class="row" id="coffee-shop-list">
 
+  <div class="small-12 large-12 columns shop-nav">
+      <div id="googft-mapCanvas"></div>
+      <ul class="sort-by">
+        <input class="search" type="text" id="search-string_0" placeholder="Search locations" onkeyup="changeMap_0()">
+        <li class="sort btn" data-sort="name">Sort by Name</li>
+        <li class="sort btn" data-sort="rating">Rating</li>
+        <li class="sort btn" data-sort="neighborhood">Hood</li>
+      </ul>
+    </div>
+    <div class="small-12 large-12 columns shops-page">
+    <div class="row">
+      <ul class="list">
+        <% for shops in @shop do %>
+        <li>
+          <a href="<%= shop_path(shops)%>">
+            <div class="small-12 medium-6 large-6 columns more">
+            <div class="row">
+            <div class="">
+              <%= image_tag(shops.image, id: "image")%>
+              <h4 id="name" class="name"><%= shops.name %></h4>
+              <%= image_tag(shops.rating_url, id:'image-rating')%>
+              </div>
+              <div>
+              <h6 id="rating" class="rating"><%= shops.rating %></h6>
+              <h6 id="neighborhood" class="neighborhood"><%= shops.neighborhood %></h6>
+              <h5 id="address"><%= shops.address %></h5>
+              <h6 id="cross"><%= shops.cross %></h6>
+              <h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
+              </div>
+            </div>
+            </div>
+          </a>  
+        </li>
 
-  var map = new google.maps.Map(mapDiv, {
-    center: navigator.geolocation.getCurrentPosition(currentPosition),
-    zoom: 13,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
-  var style = [
-  {
-    featureType: 'landscape',
-    elementType: 'all',
-    stylers: [
-    {
-     color:"#948d98" }
-     ]
-   },
-   {
-    featureType: 'administrative.country',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off' }
-    ]
-  },
-  {
-    featureType: 'administrative.province',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off' }
-    ]
-  },
-  {
-    featureType: 'administrative.locality',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off' }
-    ]
-  },
-  {
-    featureType: 'administrative.land_parcel',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off' }
-    ]
-  },
-  {
-    featureType: 'poi',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off'}
-    ]
-  },
-  {
-    featureType: 'transit.line',
-    elementType: 'all',
-    stylers: [
-    { color: "#E9D1BE"}
-    ]
-  },
-  {
-    featureType: 'transit.station',
-    elementType: 'all',
-    stylers: [
-    { visibility: 'off'}
-    ]
-  },
-  {
-    featureType: 'water',
-    elementType: 'all',
-    stylers: [
-    { color: "#f4f3f9"}
-    ]
-  }
-  ];
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend-open'));
-  map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(document.getElementById('googft-legend'));
+        <% end %>
+      </ul>
+    </div>
+    </div>
+  </div>
 
-  layer = new google.maps.FusionTablesLayer({
-    map: map,
-    heatmap: { enabled: false },
-    query: {
-      select: "col6",
-      from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
-      where: ""
-    },
-    options: {
-      styleId: 4,
-      templateId: 5
-    }
-  });
+  <!-- Main Shops Map -->
 
-  if (isMobile) {
-    var legend = document.getElementById('googft-legend');
-    var legendOpenButton = document.getElementById('googft-legend-open');
-    var legendCloseButton = document.getElementById('googft-legend-close');
-    legend.style.display = 'none';
-    legendOpenButton.style.display = 'block';
-    legendCloseButton.style.display = 'block';
-    legendOpenButton.onclick = function() {
-      legend.style.display = 'block';
-      legendOpenButton.style.display = 'none';
-    }
-    legendCloseButton.onclick = function() {
-      legend.style.display = 'none';
-      legendOpenButton.style.display = 'block';
-    }
-  }
-  
-  var styledMapType = new google.maps.StyledMapType(style, {
-    map: map,
-    name: 'Styled Map'
-  });
-  map.mapTypes.set('map-style', styledMapType);
-  map.setMapTypeId('map-style');
-}
-function changeMap_0() {
-      var whereClause;
-      var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
-      if (searchString != '--Select--') {
-        whereClause = "'Name' CONTAINS IGNORING CASE '" + searchString + "'";
-      }
-      layer.setOptions({
-        query: {
-          select: "col6",
-          from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
-          where: whereClause
-        }
-      });
-    }
-google.maps.event.addDomListener(window, 'load', initialize);
-	initialize();
-		list();
-	</script>
+  <%= render "map"%>

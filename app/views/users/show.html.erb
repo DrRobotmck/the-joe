@@ -1,41 +1,34 @@
 <div class="back new"></div>
-<div class="container">
-  <%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image'), root_path%>
-  <div class="header col-md-10 col-s-10 col-xs-2">
-    <%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
-    <%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-    <% unless logged_in? %>
-    <%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
-    <% else %>
-    <%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
-    <%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-    <% end %>
+<%= render "layouts/header" %>
+
+<div class="row shop-show">
+  
+  <div class="small-4 large-4 columns">
+    <h2 class="salutation">Welcome!</h2>
+    <%=link_to("Edit Account",{:action => :edit}, {:method => :get}) %>
+
+    <h2 class="name"><%=@user.name%></h2>
+    <h4 class="email"><%=@user.email%></h4>
 
   </div>
-  <div class= "mainpage-shops col-md-10 col-s-12 col-xs-12">
-
-    <div class="user-page col-md-6 col-s-4 col-xs-4">
-      <h2>Welcome!</h2>
-      <%=link_to("Edit Account",{:action => :edit}, {:method => :get}) %>
-
-      <h2 class="name"><%=@user.name%></h2>
-      <h4 class="email"><%=@user.email%></h4>
-
-    </div>
-    <div class= "favorites col-md-6 col-s-4 col-xs-4">
-        <h2>My List</h2>
-        <ul>
-         <% for shops in @user.shops do%>
-          <li>
-            <a href="<%= shop_path(shops)%>"><img src="<%=shops.image%>"></a>
-            <h2 class="name"><%=shops.name%></h2>
-            <img class="rating"src="<%=shops.rating_url%>">
-            <h4 class="neighborhood"><%=shops.neighborhood%></h4>
-            <h4 class="address"><%=shops.address%></h4>
-            <%= button_to("Remove", unfavorite_shop_path(shops), :method => :delete)%>
+  <div class="small-8 large-8 columns">
+    <h2 class="salutation">My List</h2>
+    <div class="row">
+      <ul>
+       <% for shops in @user.shops do%>
+       <li>
+        <div class="small-4 large-4 columns more">
+          <a href="<%= shop_path(shops)%>"><img src="<%=shops.image%>"></a>
+          <h2 class="name"><%=shops.name%></h2>
+          <img class="rating"src="<%=shops.rating_url%>">
+          <h4 class="neighborhood"><%=shops.neighborhood%></h4>
+          <h4 class="address"><%=shops.address%></h4>
+          <%= button_to("Remove", unfavorite_shop_path(shops), :method => :delete)%>
+          <div>
           </li>
           <%end%>
         </ul>
+      </div>
     </div>
+
   </div>
-</div>

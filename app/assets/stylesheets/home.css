@@ -1,0 +1,103 @@
+.main-form{
+	background: rgba(34,31,31,.5);
+	height:380px;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: 2px;
+}
+.shops{
+	
+	text-align: center;
+}
+
+.shops-page{
+	overflow: scroll;
+	height:400px;
+}
+.sort.btn{
+	display: inline-block;
+}
+div#coffee-shop-list{
+	padding: .5em;
+	background: rgba(34,31,31,.4);
+	color:lavenderblush;
+}
+.more{
+	text-align: center;
+	color: lavenderblush;
+	font-family: Lato;
+	font-weight: 300;
+	height: 260px;
+	line-height: 1.25em;
+	margin-bottom: 10px;
+}
+#name{
+	color: darkseagreen;
+	font-size: 1.25em;
+}
+#rating{
+	color: cornsilk;
+}
+#neighborhood{
+	color: cornsilk;
+	font-size: 1.1em;
+}
+#address{
+	color: cornsilk;
+	font-size: 1.1em;
+}
+#cross, #city{
+	color: cornsilk;
+}
+.shop-nav{
+	margin-bottom:1em;
+}
+.name{
+	color: cornsilk;
+	font-size: 1.5em;
+	line-height: 1.75em;
+}
+.rating{
+	color: cornsilk;
+}
+.address{
+	color: cornsilk;
+}
+.cross{
+	color: cornsilk;
+}
+.neighborhood{
+	color: cornsilk;
+}
+.city{
+	color: cornsilk;
+}
+.phone{
+	color: cornsilk;
+}
+.shop-show{
+	background: rgba(34,31,31,.4);
+	padding: .5em;
+	color:cornsilk;
+	font-family: "Lato";
+	font-weight: 300;
+	line-height: 1.2em;
+}
+.salutation{
+	font-family: Lato;
+	font-size: 1.5em;
+	color: darkseagreen;
+	line-height: 1.7em;
+}
+.email{
+	font-size: 1.5em;
+	line-height: 1.75em;
+	color:aliceblue;
+}
+.error{
+	font-family: "Lato";
+	font-size: 2em;
+	font-weight: 300;
+	color:cornsilk;
+	line-height: 1.5em;
+}

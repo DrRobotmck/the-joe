@@ -1,5 +1,5 @@
 <%=form_for @user, html: {class: "new_user_form"} do	|u| %>
-			<%= u.label :tag, "Sign Up", class: "user-form-label"%><br>
+			<%= u.label :tag, "Account", class: "user-form-label"%><br>
 			<%= u.label :name, "Name", class: "user-form"%><br>
 			<%=	u.text_field :name%><br>
 			<%=	u.label :email, "Email", class: "user-form"%><br>
@@ -8,5 +8,5 @@
 			<%=	u.password_field :password %><br>
 			<%=	u.label :password_confirmation, "Password confirmation", class: "user-form"%><br>
 			<%= u.password_field :password_confirmation%><br>
-			<%= u.submit "Submit" %>
+			<%= u.submit "Submit", class: "searchbox"%>
 			<%end%>

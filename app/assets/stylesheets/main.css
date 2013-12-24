@@ -1,9 +1,6 @@
-html, body{
-	max-width:100%;
-}
+
 a{
 	text-decoration: none;
-	/*display: inline-block;*/
 }
 a:visited{
 	color:lavenderblush;
@@ -31,26 +28,14 @@ div.back.drinks{
 div.back.new{
 	background:url(http://upload.wikimedia.org/wikipedia/commons/6/62/Drip_Coffee_Bangkok.jpg);
 	height:100%;
-	background-size: 111%;
+	background-size: cover;
 	-webkit-filter: contrast(90%)blur(1px) sepia(.3);
 }
-.image{
-	z-index: 1;
-	left:5em;
-	position: absolute;
-	top:-2em;
-}
-.image:hover{
-	width:130px;
-	height:130px;
-}
+
 label.homelabel{
 	font-family: "ABeeZee";
 	font-size: 1.25em;
 	color:cornsilk;
-}
-.container{
-	z-index: 1;
 }
 .header{
 	position:fixed;
@@ -58,82 +43,39 @@ label.homelabel{
 	height: 15%;
 	left:35%;
 }
-.mainpage{
-	top:7em;
-	float: right;
-	background: rgba(34,31,31,.5);
-	border-radius: 20px;
-	height:415px;
-}
-.mainpage-new-user{
-	top:10em;
-	float:right;
-	left:14%;
-	border-radius: 20px;
-}
-.mainpage-shops{
-	top:8em;
-	/*left:20%;*/
-	position: fixed;
-	background: rgba(34,31,31,.9);
-	border-radius: 20px;
-	height:650px;
-	overflow: scroll;
-}
-.mainpage-search{
-	font-family: "Lato";
-	top:7em;
-	float:right;
-	background: rgba(34,31,31,.6);
-	border-radius: 20px;
-	height:650px;
-	overflow: scroll;
-}
-.mainpage-search a{
-	color: cornsilk;
-}
-.shop-form{
-	margin-top: 20%;
-	/*margin-bottom:27.5%;*/
-	height:35%;
-	text-align: center;
-}
 .shops{
 	text-align: center;
 }
 .headbutts{
-	font-family: "ABeeZee";
 	border:none;
 	background: rgba(34,31,31,.4);
 	color:cornsilk;
-	display:inline-block;
-	margin-right: 1px;
-	width:5em;
-	height:2em;
 	font-size: 1em;
 	font-family:"ABeeZee";
 }
 .headbutts a:hover{
-	color: indianred;
-	text-decoration: none;
+	color: lavenderblush;
 }
 .drinks{
 	text-align: center;
 }
 .searchbox{
-	height: 2.25em;
 	font-family: "ABeeZee";
 	font-size: 1em;
 	text-align: center;
-	background: rgba(34,31,31,.2);
+	background: rgba(34,31,31,.4);
 	border:none;
 	color:cornsilk;
 }
-.searchbox:hover{
-	border: 2px indianred dotted;
+.searchbox a{
+	color: cornsilk;
+}
+.searchbox a:hover{
+	color:lavenderblush;
 }
 input.searchbox{
-	border: 3px solid cornsilk;
+	border: 1px solid cornsilk;
+	font-family: "ABeeZee"
 }
 label{
 	color: darkseagreen;
@@ -147,7 +89,6 @@ div.new-user-form{
 	margin-right: 2%;
 	background: rgba(34,31,31,.6);
 	height: 300px;
-
 }
 .new-user-form form{
 	text-align: center;
@@ -166,24 +107,7 @@ label.user-form{
 	font-size:1.1em;
 	margin-bottom: 3px;
 }
-div.session{
-	border-radius: 20% 20% 0 20%;
-	top:6em;
-	background: rgba(34,31,31,.6);
-	height: 300px;
-}
-.session form{
-	text-align: center;
-	margin: 5em auto;
 
-}
-.session input{
-	width: 80%;
-	height: 1.5em;
-	font-family: "Lato";
-	font-size:1.1em;
-	margin-bottom: 5px;
-}
 label.user-form-label{
 	font-size: 2em;
 	font-family: "Lato";

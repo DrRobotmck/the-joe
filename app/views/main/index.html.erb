@@ -1,39 +1,26 @@
+
 <div class="back home"></div>
-<div class="container">
-	<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image img-responsive'), root_path%>
-	<div class="header col-md-9">	
-		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
-		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-		<% unless logged_in? %>
-		<%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
-		<% else %>
-		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
-		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-		<% end %>
-
-	</div>
-
-	<div class= "mainpage col-md-4 col-s-12 col-xs-12">
-		<div class="shop-form col-md-12 col-s-10 col-xs-10">
-			<form action="/search"class="shops">
+<%= render "layouts/header" %>
+  <div class="row"></div>
+  <div class="small-10 small-offset-1 large-3 large-offset-8 columns">
+  	<div class="main-form">
+  	<form action="/search"class="shops">
 				<label class="homelabel">Search for a coffee shop</label>
-				<br><br>
-				<input class="searchbox" type="search" name="shopsearch" placeholder="Name, hood or zip"/><br><br>
+				<br>
+				<input class="searchbox" type="search" name="shopsearch" placeholder="Name, hood or zip"/><br>
 				<button class="searchbox">Search</button>
+			<%= button_tag link_to("View All", shops_path), class: "searchbox" %>
 			</form>
 			<br>
-			<label class="homelabel">Or</label>
-			<br><br>
-			<%= button_tag link_to("View All", shops_path), class: "searchbox" %><br><br>
 		<form action="/drinks"class="drinks">
 				<label class="homelabel">Look up a drink</label>
 				<br>
-				<input class="searchbox"type="hidden" name="drinksearch" placeholder="Type a name">
-				<br>
+				
 				<button class="searchbox">View Glossary</button>
 			</form>
 			</div>
-	</div>
-
+  </div>
 </div>
+
+
 

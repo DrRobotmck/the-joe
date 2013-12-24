@@ -1,38 +1,36 @@
 <div class="back shops"></div>
-<div class="container">
-	<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image img-responsive'), root_path%>
-	<div class="header col-md-9">	
-		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
-		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-		<% unless logged_in? %>
-		<%= button_tag link_to('Account', new_user_path), class: 'headbutts'%>
-		<% else %>
-		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
-		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-		<% end %>
+<%= render "layouts/header" %>
 
-	</div>
-	<div class= "mainpage-shops col-md-10 col-s-12 col-xs-12">
-		<div class='map col-md-6 col-s-12 col-xs-12'>
-			<div id="googft-mapCanvas"></div>
-		</div>
-		<div class= "single-shop col-md-6 col-s-12 col-xs-12">
-			<img class="main picture"src="<%= @shop.image %>">
-			<h2 class="name"><%=@shop.name%></h2>
-			<h6 class="rating"><%=@shop.rating%></h6>
-			<img class="rating"src="<%=@shop.rating_url%>">
-			<h4 class="address"><%=@shop.address%></h4>
-			<h5 class="cross"><%=@shop.cross%></h5>
-			<h4 class="neighborhood"><%=@shop.neighborhood%></h4>
-			<h5 class="city"><%=@shop.city%>, <%=@shop.zip%></h5>
-			<h6 class="phone"><%=@shop.phone%></h6>
-
-			<p><%= @shop.snippet%></p>
-			<%if logged_in? %>
-			<%= button_to("Add to List", favorite_shop_path)%>
-			<%end%>
+<div class="row shop-show">
+	<div class="small-12 large-12 columns">
+		<div class="row">
+			<div class="small-3 large-3 small-offset-1 columns info">
+				<img class=""src="<%= @shop.image %>">
+				<h2 class="name"><%=@shop.name%></h2>
+				<h6 class="rating"><%=@shop.rating%></h6>
+				<img class="rating"src="<%=@shop.rating_url%>">
+				<%if logged_in? %>
+				<%= button_to("Add to List", favorite_shop_path)%>
+				<%end%>
+			</div>
+			<div class="small-6 large-6 columns details">
+				<h4 class="address"><%=@shop.address%></h4>
+				<h5 class="cross"><%=@shop.cross%></h5>
+				<h4 class="neighborhood"><%=@shop.neighborhood%></h4>
+				<h5 class="city"><%=@shop.city%>, <%=@shop.zip%></h5>
+				<h6 class="phone"><%=@shop.phone%></h6>
+				<p><%= @shop.snippet%></p>
+			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		mapSingle("<%=@shop.address%>", "<%=@shop.address%> <%=@shop.zip%>")
-	</script>
+	<div class="small-12 large-12 columns">
+		<div id="googft-mapCanvas"></div>
+	</div>
+
+</div>
+
+<!-- Google Map Javascript -->
+
+<script type="text/javascript">
+	mapSingle("<%=@shop.address%>", "<%=@shop.address%> <%=@shop.zip%>")
+</script>

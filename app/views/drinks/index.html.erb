@@ -1,33 +1,17 @@
 <script type="text/javascript">
-$(function(){
-	searchDrinks();
-	getWords( addList );
-	smooveScroll();
-})
+	$(function(){
+		searchDrinks();
+		getWords( addList );
+		smooveScroll();
+	})
 </script>
 
 <div class="back drinks"></div>
-<div class="container">
-<%= link_to image_tag('joe2.svg', width:125, height:125, class: 'image'), root_path%>
-<div class= "row">
+<%= render "layouts/header" %>
 
+<div class="row">
 	
-	<div class="header col-md-10 col-s-10 col-xs-12">
-		
-		<%= button_tag link_to('Shops', shops_path), class: 'headbutts'%>
-		<%= button_tag link_to('Glossary', drinks_path), class: 'headbutts'%>
-		<% unless logged_in? %>
-		<%= button_tag link_to('Sign Up', new_user_path), class: 'headbutts'%>
-		<% else %>
-		<%= button_tag link_to('Account', user_path(session[:user_id])), class: 'headbutts'%>
-		<%= button_tag link_to('Logout', session_path, :method => :delete), class: 'headbutts'%>
-		<% end %>
+	<div class="small-4 large-4 wordlist columns"></div>
+	<div class="small-7 small-offset-1 large-7 definition columns"></div>
 
-	</div>
-	
-	<div class="words col-md-12 col-s-12 col-xs-12">
-		<div class="wordlist col-md-4 col-s-2 col-xs-4"></div>
-
-		<div class="definition col-md-8 col-s-6 col-xs-8"></div>
-	</div>
 </div>
