@@ -16,29 +16,24 @@
     </div>
     <div class="small-12 large-12 columns shops-page">
     <div class="row">
-      <ul class="list">
+      <ul class="list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
         <% for shops in @shop do %>
         <li>
           <a href="<%= shop_path(shops)%>">
-            <div class="small-12 medium-6 large-6 columns more">
-            <div class="row">
-            <div class="">
+            <div class="more">
               <%= image_tag(shops.image, id: "image")%>
               <h4 id="name" class="name"><%= shops.name %></h4>
               <%= image_tag(shops.rating_url, id:'image-rating')%>
               </div>
-              <div>
+              <div class="more">
               <h6 id="rating" class="rating"><%= shops.rating %></h6>
               <h6 id="neighborhood" class="neighborhood"><%= shops.neighborhood %></h6>
               <h5 id="address"><%= shops.address %></h5>
               <h6 id="cross"><%= shops.cross %></h6>
               <h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
               </div>
-            </div>
-            </div>
           </a>  
         </li>
-
         <% end %>
       </ul>
     </div>
