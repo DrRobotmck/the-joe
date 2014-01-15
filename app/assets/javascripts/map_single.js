@@ -1,6 +1,8 @@
 function mapSingle(shop, address){
   function initialize() {
     function singleGeocode(addressed) {
+      // var geocoder = new google.maps.Geocoder;  
+      console.log(shop,addressed)
       geocoder.geocode({'address': addressed},function(response){
         map.setCenter(new google.maps.LatLng(response[0].geometry.location.b,response[0].geometry.location.d));
       })
