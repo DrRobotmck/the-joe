@@ -1,9 +1,8 @@
 function mapSingle(shop, address){
   function initialize() {
-    function singleGeocode(address) {
-      var geocoder = new google.maps.Geocoder;  
-      geocoder.geocode({'address': address},function(response){
-        map.setCenter(new google.maps.LatLng(response[0].geometry.location.nb,response[0].geometry.location.ob))
+    function singleGeocode(addressed) {
+      geocoder.geocode({'address': addressed},function(response){
+        map.setCenter(new google.maps.LatLng(response[0].geometry.location.b,response[0].geometry.location.d));
       })
     };
     var geocoder = new google.maps.Geocoder;
@@ -131,20 +130,20 @@ function mapSingle(shop, address){
     map.mapTypes.set('map-style', styledMapType);
     map.setMapTypeId('map-style');
   }
-  function changeMap_0() {
-    var whereClause;
-    var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
-    if (searchString != '--Select--') {
-      whereClause = "'Name' CONTAINS IGNORING CASE '" + searchString + "'";
-    }
-    layer.setOptions({
-      query: {
-        select: "col6",
-        from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
-        where: whereClause
-      }
-    });
-  }
+  // function changeMap_0() {
+  //   var whereClause;
+  //   var searchString = document.getElementById('search-string_0').value.replace(/'/g, "\\'");
+  //   if (searchString != '--Select--') {
+  //     whereClause = "'Name' CONTAINS IGNORING CASE '" + searchString + "'";
+  //   }
+  //   layer.setOptions({
+  //     query: {
+  //       select: "col6",
+  //       from: "1bf4GLLf6NEs4Qp9Mw5MqjPgg1MvIzCxhCDWk_iY",
+  //       where: whereClause
+  //     }
+  //   });
+  // }
   google.maps.event.addDomListener(window, 'load', initialize);
   initialize();
 }
