@@ -5,11 +5,10 @@
 	<div class="small-8 large-8 columns shop-show">
 	<h1 class="salutation">Your search results...</h1>
 		<div class="row">
-			<ul class="list">
+			<ul class="list small-block-grid-2 medium-block-grid-3 large-block-grid-4">
 			<% for shops in @shops do %>
 				<li>
 					<a href="<%= shop_path(shops)%>">
-						<div class="small-4 large-4 columns more">
 							<%= image_tag(shops.image, id: "image")%>
 							<h4 id="name" class="name"><%= shops.name %></h4>
 							<h6 id="rating" class="rating"><%= shops.rating %></h6>
@@ -18,7 +17,6 @@
 							<h5 id="address"><%= shops.address %></h5>
 							<h6 id="cross"><%= shops.cross %></h6>
 							<h6 id="city"><%= shops.city%>, <%= shops.zip %></h6>
-						</div>
 					</a>  
 				</li>
 
